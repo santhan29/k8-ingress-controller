@@ -47,8 +47,8 @@ metadata:
         alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:361769595563:certificate/9a6d002f-a8c3-47cc-9681-689b4ec2e9ac
         alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]' 
         alb.ingress.kubernetes.io/group.name: expense  #instead of creating new LB, it will be added to the group where app1 loadbalancer is created
-        kubernetes.io/ingress.class: alb 
-spec:
+spec: 
+    ingressClassName: alb 
     rules:
     - host: "app2.aws81s.store" 
       http:
